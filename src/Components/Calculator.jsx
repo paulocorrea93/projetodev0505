@@ -42,7 +42,9 @@ function operatorHandler (e){
 function calculate (){
   if(operator === "/"){
     setNum(oldNum/num)
-  } 
+  } else if (operator === "*"){
+    setNum(oldNum*num)
+  }
 }
 
   return (
