@@ -41,13 +41,13 @@ function operatorHandler (e){
 
 function calculate (){
   if(operator === "/"){
-    setNum(oldNum/num)
+    setNum(parseFloat(oldNum)/parseFloat(num))
   } else if (operator === "*"){
-    setNum(oldNum*num)
+    setNum(parseFloat(oldNum)*parseFloat(num))
   } else if (operator === "-"){
-    setNum(oldNum-num)
+    setNum(parseFloat(oldNum)-parseFloat(num))
   } else if (operator === "+"){
-    setNum(oldNum+num)
+    setNum(parseFloat(oldNum)+parseFloat(num))
   }
 }
 
