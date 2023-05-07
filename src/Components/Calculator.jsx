@@ -44,6 +44,10 @@ function calculate (){
     setNum(oldNum/num)
   } else if (operator === "*"){
     setNum(oldNum*num)
+  } else if (operator === "-"){
+    setNum(oldNum-num)
+  } else if (operator === "+"){
+    setNum(oldNum+num)
   }
 }
 
