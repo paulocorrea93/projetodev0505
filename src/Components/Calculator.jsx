@@ -16,6 +16,16 @@ const Calculator = () => {
     }
   }
 
+  function clear (){
+    setNum(0)
+  }
+
+  function percentage (){
+    setNum(num/100)
+  }
+
+
+
   return (
     <div>
       <p></p>
