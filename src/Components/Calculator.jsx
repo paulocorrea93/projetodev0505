@@ -24,6 +24,13 @@ const Calculator = () => {
     setNum(num/100)
   }
 
+  function changeSign() {
+    if (num > 0) {
+      setNum(-num);
+    } else {
+      setNum(Math.abs(num));
+    }
+  }
 
 
   return (
