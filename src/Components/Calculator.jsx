@@ -39,6 +39,11 @@ function operatorHandler (e){
   setNum(0)
 }
 
+function calculate (){
+  if(operator === "/"){
+    setNum(oldNum/num)
+  } 
+}
 
   return (
     <div>
