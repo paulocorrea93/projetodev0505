@@ -24,13 +24,20 @@ const Calculator = () => {
     setNum(num/100)
   }
 
-  function changeSign() {
-    if (num > 0) {
-      setNum(-num);
-    } else {
-      setNum(Math.abs(num));
-    }
+function changeSign (){
+  if(num > 0){
+    setNum(-num)
+  } else {
+    setNum(Math.abs(num))
   }
+}
+
+function operatorHandler (e){
+  var operatorInput = e.target.value
+  setOperator(operatorInput)
+  setOldNum(num)
+  setNum(0)
+}
 
 
   return (
