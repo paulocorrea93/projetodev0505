@@ -1,6 +1,8 @@
 import React from "react";
 import "./Calculator.css";
 import { useState } from "react";
+import { Container } from "@mui/material";
+import Box from "@mui/material";
 
 const Calculator = () => {
   const [num, setNum] = useState(0);
@@ -53,7 +55,17 @@ function calculate (){
 
   return (
     <div>
-      <p></p>
+      <Box m={5}/>
+      <Container maxWidth="xs">
+    <div className="wrapper">
+      <Box m={12}/>
+      <h1 className="result">{num}</h1>
+      <button onClick={clear}>AC</button>
+      <button onClick={changeSign}>+/-</button>
+      <button onClick={percentage}>%</button>
+      <button className="orange" onClick={operatorHandler} value="/">/</button>
+    </div>
+      </Container>
     </div>
   );
 };
