@@ -2,7 +2,8 @@ import React from "react";
 import "./Calculator.css";
 import { useState } from "react";
 import { Container } from "@mui/material";
-import Box from "@mui/material";
+import Box from '@mui/material/Box';
+
 
 const Calculator = () => {
   const [num, setNum] = useState(0);
