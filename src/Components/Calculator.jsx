@@ -1,13 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Calculator.css";
-import { useState } from "react";
-import { Container } from "@mui/material";
-import Box from '@mui/material/Box';
+import Container from "@mui/material/Container";
+import { Box } from "@mui/system";
 
-
-const Calculator = () => {
+export default function Calculator() {
   const [num, setNum] = useState(0);
-  const [oldNum, setOldNum] = useState(0);
+  const [oldnum, setOldNum] = useState(0);
   const [operator, setOperator] = useState();
 
   function inputNum(e) {
@@ -23,7 +21,7 @@ const Calculator = () => {
     setNum(0);
   }
 
-  function percentage() {
+  function porcentage() {
     setNum(num / 100);
   }
 
@@ -44,13 +42,16 @@ const Calculator = () => {
 
   function calculate() {
     if (operator === "/") {
-      setNum(parseFloat(oldNum) / parseFloat(num));
-    } else if (operator === "*") {
-      setNum(parseFloat(oldNum) * parseFloat(num));
+      setNum(parseFloat(oldnum) / parseFloat(num));
+    } else if (operator === "X") {
+      setNum(parseFloat(oldnum) * parseFloat(num));
     } else if (operator === "-") {
-      setNum(parseFloat(oldNum) - parseFloat(num));
+        console.log(oldnum)
+        console.log(num)
+        console.log(oldnum-num)
+      setNum(parseFloat(oldnum) - parseFloat(num));
     } else if (operator === "+") {
-      setNum(parseFloat(oldNum) + parseFloat(num));
+      setNum(parseFloat(oldnum) + parseFloat(num));
     }
   }
 
@@ -63,50 +64,47 @@ const Calculator = () => {
           <h1 className="result">{num}</h1>
           <button onClick={clear}>AC</button>
           <button onClick={changeSign}>+/-</button>
-          <button onClick={percentage}>%</button>
+          <button onClick={porcentage}>%</button>
           <button className="orange" onClick={operatorHandler} value="/">
             /
           </button>
-          <button className="gray" onClick={inputNum} value="7">
+          <button className="gray" onClick={inputNum} value={7}>
             7
           </button>
-          <button className="gray" onClick={inputNum} value="8">
+          <button className="gray" onClick={inputNum} value={8}>
             8
           </button>
-          <button className="gray" onClick={inputNum} value="9">
+          <button className="gray" onClick={inputNum} value={9}>
             9
           </button>
-
           <button className="orange" onClick={operatorHandler} value="X">
             X
           </button>
-          <button className="gray" onClick={inputNum} value="4">
+          <button className="gray" onClick={inputNum} value={4}>
             4
           </button>
-          <button className="gray" onClick={inputNum} value="5">
+          <button className="gray" onClick={inputNum} value={5}>
             5
           </button>
-          <button className="gray" onClick={inputNum} value="6">
+          <button className="gray" onClick={inputNum} value={6}>
             6
           </button>
-
           <button className="orange" onClick={operatorHandler} value="-">
-            /
+            -
           </button>
-          <button className="gray" onClick={inputNum} value="1">
+          <button className="gray" onClick={inputNum} value={1}>
             1
           </button>
-          <button className="gray" onClick={inputNum} value="2">
+          <button className="gray" onClick={inputNum} value={2}>
             2
           </button>
-          <button className="gray" onClick={inputNum} value="3">
+          <button className="gray" onClick={inputNum} value={3}>
             3
           </button>
-
           <button className="orange" onClick={operatorHandler} value="+">
             +
           </button>
-          <button className="gray" onClick={inputNum} value="0">
+          <button className="gray" onClick={inputNum} value={0}>
             0
           </button>
           <button className="gray" onClick={inputNum} value={"."}>
@@ -115,7 +113,6 @@ const Calculator = () => {
           <button className="gray" style={{ visibility: "hidden" }}>
             ,
           </button>
-
           <button className="orange" onClick={calculate}>
             =
           </button>
@@ -123,6 +120,4 @@ const Calculator = () => {
       </Container>
     </div>
   );
-};
-
-export default Calculator;
+}
